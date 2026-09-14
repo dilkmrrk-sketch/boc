@@ -1,0 +1,795 @@
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b10;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   INTRO SCREEN
+========================================= */
+
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #07090d;
+
+    transition:
+        transform 0.9s cubic-bezier(0.77, 0, 0.18, 1),
+        opacity 0.9s ease;
+}
+
+
+/* =========================================
+   WALLPAPER
+========================================= */
+
+.intro-wallpaper {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.intro-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.62),
+            rgba(0, 0, 0, 0.78)
+        );
+}
+
+
+/* =========================================
+   MAIN INTRO PANEL
+========================================= */
+
+.intro-panel {
+    position: relative;
+    z-index: 2;
+
+    width: min(760px, 88%);
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 55px 60px;
+
+    background: rgba(8, 11, 16, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================
+   PANEL CONTENT
+========================================= */
+
+.intro-panel-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   WORD LOGO
+========================================= */
+
+.brand-logo {
+    font-size: clamp(42px, 7vw, 76px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.brand-logo span {
+    color: #ffffff;
+}
+
+.brand-logo small {
+    font-size: 0.38em;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.tagline {
+    margin-top: 22px;
+
+    max-width: 650px;
+
+    font-size: clamp(16px, 2vw, 22px);
+
+    line-height: 1.4;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.intro-description {
+    max-width: 570px;
+
+    margin-top: 22px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================
+   SLIDE AREA
+========================================= */
+
+.slide-area {
+    margin-top: 55px;
+
+    width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: grab;
+
+    user-select: none;
+
+    touch-action: none;
+}
+
+.slide-area:active {
+    cursor: grabbing;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.slide-arrow {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50%;
+
+    font-size: 26px;
+
+    animation: arrowMove 1.6s infinite ease-in-out;
+}
+
+
+/* =========================================
+   SLIDE TEXT
+========================================= */
+
+.slide-text {
+    margin-top: 14px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================
+   SLIDE LINE
+========================================= */
+
+.slide-line {
+    width: 80px;
+
+    height: 1px;
+
+    margin-top: 12px;
+
+    background: rgba(255, 255, 255, 0.28);
+}
+
+
+/* =========================================
+   ARROW ANIMATION
+========================================= */
+
+@keyframes arrowMove {
+
+    0%, 100% {
+        transform: translateY(5px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =========================================
+   SLIDE AWAY
+========================================= */
+
+.intro-screen.hide {
+    transform: translateY(-100%);
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .intro-panel {
+        width: 90%;
+
+        min-height: 470px;
+
+        padding: 45px 25px;
+
+        border-radius: 22px;
+    }
+
+    .brand-logo {
+        letter-spacing: -2px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .intro-description {
+        font-size: 14px;
+
+        max-width: 430px;
+    }
+
+    .slide-area {
+        margin-top: 45px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .intro-panel {
+        min-height: 450px;
+
+        padding: 38px 20px;
+    }
+
+    .brand-logo {
+        font-size: 39px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .intro-description {
+        font-size: 13px;
+    }
+}
+
+/* =========================================
+   SLIDE AREA
+========================================= */
+
+.slide-area {
+    margin-top: 65px;
+
+    width: 190px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: grab;
+
+    user-select: none;
+
+    touch-action: none;
+}
+
+.slide-area:active {
+    cursor: grabbing;
+}
+
+
+.slide-arrow {
+    width: 54px;
+    height: 54px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    animation: arrowMove 1.6s infinite ease-in-out;
+}
+
+
+.slide-text {
+    margin-top: 14px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+.slide-line {
+    width: 70px;
+    height: 1px;
+
+    margin-top: 12px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+@keyframes arrowMove {
+
+    0%, 100% {
+        transform: translateY(5px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(70, 100, 140, 0.14),
+            transparent 35%
+        ),
+        #080b10;
+
+    padding: 0 6vw;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 45px 0 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.header-logo {
+    font-size: clamp(27px, 4vw, 43px);
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+}
+
+
+.header-logo small {
+    font-size: 0.42em;
+    opacity: 0.65;
+}
+
+
+.site-header p {
+    margin-top: 9px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================
+   CATEGORY SECTION
+========================================= */
+
+.category-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+
+.section-heading span {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #8c98a8;
+}
+
+
+.section-heading h1 {
+    font-size: clamp(35px, 5vw, 60px);
+
+    letter-spacing: -2px;
+}
+
+
+.section-heading p {
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.50);
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.category-grid {
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.category-card {
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 38px;
+
+    border-radius: 24px;
+
+    text-decoration: none;
+    color: white;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.category-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,0.10),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+
+.category-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+
+.international-card {
+    background:
+        linear-gradient(
+            135deg,
+            #172330,
+            #0d131b
+        );
+}
+
+
+.sri-lanka-card {
+    background:
+        linear-gradient(
+            135deg,
+            #281c19,
+            #120f0e
+        );
+}
+
+
+.card-number {
+    position: relative;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+.card-content {
+    position: relative;
+}
+
+
+.card-label {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    margin-bottom: 16px;
+}
+
+
+.card-content h2 {
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.8px;
+}
+
+
+.card-content p {
+    max-width: 430px;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+.card-arrow {
+    position: relative;
+
+    align-self: flex-end;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.category-card:hover .card-arrow {
+    transform: translateX(6px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px 0 45px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    display: flex;
+    justify-content: space-between;
+
+    color: rgba(255,255,255,0.4);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .intro-content {
+        width: 88%;
+    }
+
+    .brand-logo {
+        letter-spacing: -2px;
+    }
+
+    .intro-description {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .slide-area {
+        margin-top: 48px;
+    }
+
+    .main-content {
+        padding: 0 20px;
+    }
+
+    .site-header {
+        padding-top: 30px;
+    }
+
+    .category-section {
+        padding: 55px 0;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 35px;
+    }
+
+    .category-card {
+        min-height: 330px;
+
+        padding: 28px;
+    }
+
+    .card-content h2 {
+        font-size: 34px;
+    }
+
+    .site-footer {
+        padding-bottom: 30px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .brand-logo {
+        font-size: 39px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .category-card {
+        min-height: 300px;
+    }
+
+    .card-content h2 {
+        font-size: 30px;
+    }
+}
