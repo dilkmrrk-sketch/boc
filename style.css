@@ -19,6 +19,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* =========================================
    INTRO SCREEN
 ========================================= */
@@ -190,9 +191,9 @@ body {
 ========================================= */
 
 .slide-area {
-    margin-top: 55px;
+    margin-top: 65px;
 
-    width: 220px;
+    width: 190px;
 
     display: flex;
     flex-direction: column;
@@ -215,18 +216,18 @@ body {
 ========================================= */
 
 .slide-arrow {
-    width: 58px;
-    height: 58px;
+    width: 54px;
+    height: 54px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 50%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 50%;
-
-    font-size: 26px;
+    font-size: 25px;
 
     animation: arrowMove 1.6s infinite ease-in-out;
 }
@@ -239,13 +240,13 @@ body {
 .slide-text {
     margin-top: 14px;
 
-    font-size: 10px;
+    font-size: 11px;
 
     font-weight: 700;
 
     letter-spacing: 3px;
 
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 
@@ -254,13 +255,13 @@ body {
 ========================================= */
 
 .slide-line {
-    width: 80px;
+    width: 70px;
 
     height: 1px;
 
     margin-top: 12px;
 
-    background: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.35);
 }
 
 
@@ -294,7 +295,7 @@ body {
 
 
 /* =========================================
-   MOBILE
+   INTRO MOBILE
 ========================================= */
 
 @media (max-width: 700px) {
@@ -324,13 +325,13 @@ body {
     }
 
     .slide-area {
-        margin-top: 45px;
+        margin-top: 48px;
     }
 }
 
 
 /* =========================================
-   SMALL MOBILE
+   INTRO SMALL MOBILE
 ========================================= */
 
 @media (max-width: 380px) {
@@ -351,81 +352,6 @@ body {
 
     .intro-description {
         font-size: 13px;
-    }
-}
-
-/* =========================================
-   SLIDE AREA
-========================================= */
-
-.slide-area {
-    margin-top: 65px;
-
-    width: 190px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    cursor: grab;
-
-    user-select: none;
-
-    touch-action: none;
-}
-
-.slide-area:active {
-    cursor: grabbing;
-}
-
-
-.slide-arrow {
-    width: 54px;
-    height: 54px;
-
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 25px;
-
-    animation: arrowMove 1.6s infinite ease-in-out;
-}
-
-
-.slide-text {
-    margin-top: 14px;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    color: rgba(255, 255, 255, 0.85);
-}
-
-
-.slide-line {
-    width: 70px;
-    height: 1px;
-
-    margin-top: 12px;
-
-    background: rgba(255, 255, 255, 0.35);
-}
-
-
-@keyframes arrowMove {
-
-    0%, 100% {
-        transform: translateY(5px);
-    }
-
-    50% {
-        transform: translateY(-6px);
     }
 }
 
@@ -475,6 +401,7 @@ body {
 
 .header-logo small {
     font-size: 0.42em;
+
     opacity: 0.65;
 }
 
@@ -507,6 +434,7 @@ body {
     margin-bottom: 15px;
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 3px;
@@ -554,6 +482,7 @@ body {
     border-radius: 24px;
 
     text-decoration: none;
+
     color: white;
 
     overflow: hidden;
@@ -561,7 +490,9 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.09);
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
 
     transition:
@@ -574,6 +505,7 @@ body {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -594,6 +526,10 @@ body {
 }
 
 
+/* =========================================
+   INTERNATIONAL CARD
+========================================= */
+
 .international-card {
     background:
         linear-gradient(
@@ -603,6 +539,10 @@ body {
         );
 }
 
+
+/* =========================================
+   SRI LANKA CARD
+========================================= */
 
 .sri-lanka-card {
     background:
@@ -614,10 +554,15 @@ body {
 }
 
 
+/* =========================================
+   CARD NUMBER
+========================================= */
+
 .card-number {
     position: relative;
 
     font-size: 13px;
+
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -626,6 +571,10 @@ body {
 }
 
 
+/* =========================================
+   CARD CONTENT
+========================================= */
+
 .card-content {
     position: relative;
 }
@@ -633,6 +582,7 @@ body {
 
 .card-label {
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 3px;
@@ -658,11 +608,16 @@ body {
     margin-top: 20px;
 
     font-size: 14px;
+
     line-height: 1.6;
 
     color: rgba(255, 255, 255, 0.55);
 }
 
+
+/* =========================================
+   CARD ARROW
+========================================= */
 
 .card-arrow {
     position: relative;
@@ -670,13 +625,17 @@ body {
     align-self: flex-end;
 
     width: 48px;
+
     height: 48px;
 
     border: 1px solid rgba(255,255,255,0.2);
+
     border-radius: 50%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 20px;
@@ -704,6 +663,7 @@ body {
     border-top: 1px solid rgba(255,255,255,0.08);
 
     display: flex;
+
     justify-content: space-between;
 
     color: rgba(255,255,255,0.4);
@@ -717,23 +677,6 @@ body {
 ========================================= */
 
 @media (max-width: 700px) {
-
-    .intro-content {
-        width: 88%;
-    }
-
-    .brand-logo {
-        letter-spacing: -2px;
-    }
-
-    .intro-description {
-        font-size: 14px;
-        line-height: 1.65;
-    }
-
-    .slide-area {
-        margin-top: 48px;
-    }
 
     .main-content {
         padding: 0 20px;
@@ -755,10 +698,12 @@ body {
         margin-top: 35px;
     }
 
-    .category-card {
-        min-height: 330px;
+    /* COMPACT MOBILE CARDS */
 
-        padding: 28px;
+    .category-card {
+        min-height: 220px;
+
+        padding: 24px;
     }
 
     .card-content h2 {
@@ -785,8 +730,12 @@ body {
         font-size: 15px;
     }
 
+    /* EXTRA COMPACT */
+
     .category-card {
-        min-height: 300px;
+        min-height: 205px;
+
+        padding: 22px;
     }
 
     .card-content h2 {
